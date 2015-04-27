@@ -1,0 +1,57 @@
+{% if not (__SELF__.alias is empty) %}
+{% set photosPlayerID = __SELF__.alias %}
+{% else %}
+{% set photosPlayerID = __SELF__.id %}
+{% endif %}
+
+
+{% set photos = __SELF__.photosList %}
+{% set photosSize = photos|length %}
+{% set sliders = __SELF__.options['sliders']%}
+{% set indicators = __SELF__.options['indicators']%}
+
+<div id="{{ photosPlayerID }}" class="carousel" data-ride="carousel">
+
+    {% if indicators %}
+    <ol class="carousel-indicators">
+        {% for i in 0..photosSize - 1 %}
+
+        {% if loop.first %}
+        <li data-target="#{{ photosPlayerID }}" data-slide-to="{{ i }}" class="active"></li>
+        {% else %}
+        <li data-target="#{{ photosPlayerID }}" data-slide-to="{{ i }}"></li>
+        {% endif %}
+
+        {% endfor %}
+    </ol>
+    {% endif %}
+
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        {% for photo in photos %}
+
+        {% if loop.first %}
+        <div class="item active">
+            {% else %}
+            <div class="item">
+                {% endif %}
+
+                <img src="{{ photo }}" alt="...">
+
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if sliders %}
+        <!-- Controls -->
+        <a class="left carousel-control" href="#{{ photosPlayerID }}" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#{{ photosPlayerID }}" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+        {% endif %}
+
+    </div> <!-- Carousel -->
+
