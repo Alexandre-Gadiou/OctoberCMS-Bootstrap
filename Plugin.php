@@ -58,7 +58,8 @@ class Plugin extends PluginBase
     {
         return [
             'Algad\Bootstrap\Components\Carousel' => 'carousel',
-            'Algad\Bootstrap\Components\Menu' => 'menu'
+            'Algad\Bootstrap\Components\Menu' => 'menu',
+            'Algad\Bootstrap\Components\ContactForm' => 'contactform',
         ];
     }
 
