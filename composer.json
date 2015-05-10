@@ -1,0 +1,27 @@
+{
+    "name": "algad/bootstrap",
+    "type": "october-plugin",
+    "description": "Bootstrap components",
+    "keywords": ["october", "cms", "bootstrap", "plugin"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexandre GADIOU",
+            "email": "alexandregadiou44@icloud.com",
+            "role": "founder"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Algad\\Bootstrap\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
