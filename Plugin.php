@@ -4,6 +4,7 @@ namespace Algad\Bootstrap;
 
 use System\Classes\PluginBase;
 use Event;
+use Lang;
 
 /**
  * Algad Bootstrap Plugin Information File.
@@ -19,8 +20,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name' => 'Bootstrap Components',
-            'description' => 'Bootstrap components for October CMS',
+            'name' => 'algad.bootstrap::lang.plugin.name',
+            'description' => 'algad.bootstrap::lang.plugin.description',
             'author' => 'Alexander GADIOU',
             'homepage' => 'http://alexandre-gadiou.appspot.com',
             'icon' => 'icon-flask'
@@ -54,13 +55,27 @@ class Plugin extends PluginBase
         });
     }
 
-    public function registerComponents()
+    public function registerMarkupTags()
     {
         return [
-            'Algad\Bootstrap\Components\Carousel' => 'carousel',
-            'Algad\Bootstrap\Components\Menu' => 'menu',
-            'Algad\Bootstrap\Components\ContactForm' => 'contactform',
-        ];
-    }
+            'functions' => [
 
-}
+                'trans' => function($key)
+                {
+                    return Lang::get('algad.bootstrap::lang.' . $key, [], \RainLab\Translate\Classes\Translator::instance()->getLocale());
+                }
+                    ]
+                ];
+            }
+
+            public function registerComponents()
+            {
+                return [
+                    'Algad\Bootstrap\Components\Carousel' => 'carousel',
+                    'Algad\Bootstrap\Components\Menu' => 'menu',
+                    'Algad\Bootstrap\Components\ContactForm' => 'contactform',
+                ];
+            }
+
+        }
+        

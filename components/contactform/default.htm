@@ -1,1 +1,73 @@
-TODO Contact form component
+{% if(contact_success_message)%}
+{{ contact_success_message|raw }}
+{% endif%}
+
+{% if( not contact_success_message )%}
+
+{{ form_open({ request: 'sendContactForm', id:'contact-form',class:'form-horizontal',role:'form'}) }}
+
+
+<div class="form-group {{ messages.has('lastname') ? 'has-error' : '' }}">
+    <label for="lastname" class="col-sm-3 control-label">{{ trans('contactForm.lastname') }}</label>
+    <div class="col-sm-9">
+        {{ form_text('lastname',inputs['lastname'],{class:'form-control', required:'required' }) }}
+        {%if(messages.has('lastname'))%}<span class="help-block">{{ trans(messages.first('lastname')) }}</span>{%endif%}
+    </div>
+</div>
+<div class="form-group {{ messages.has('firstname') ? 'has-error' : '' }}">
+    <label for="firstname" class="col-sm-3 control-label">{{ trans('contactForm.firstname') }}</label>
+    <div class="col-sm-9">
+        {{ form_text('firstname',inputs['firstname'],{class:'form-control', required:'required'}) }}
+        {%if(messages.has('firstname'))%}<span class="help-block">{{ trans(messages.first('firstname')) }}</span>{%endif%}
+    </div>
+</div>
+<div class="form-group {{ messages.has('email') ? 'has-error' : '' }}">
+    <label for="email" class="col-sm-3 control-label">{{ trans('contactForm.email') }}</label>
+    <div class="col-sm-9">
+        {{ form_text('email',inputs['email'],{class:'form-control', required:'required'}) }}
+        {%if(messages.has('email'))%}<span class="help-block">{{ trans(messages.first('email')) }}</span>{%endif%}
+    </div>        
+</div>
+<div class="form-group {{ messages.has('subject') ? 'has-error' : '' }}">
+    <label for="subject" class="col-sm-3 control-label">{{ trans('contactForm.subject') }}</label>
+    <div class="col-sm-9">
+        {{ form_text('subject',inputs['subject'],{class:'form-control', required:'required'}) }}
+        {%if(messages.has('subject'))%}<span class="help-block">{{ trans(messages.first('subject')) }}</span>{%endif%}
+    </div>
+</div>
+<div class="form-group {{ messages.has('message') ? 'has-error' : '' }}">
+    <label for="message" class="col-sm-3 control-label">{{ trans('contactForm.message') }}</label>
+    <div class="col-sm-9">
+        {{ form_textarea('message',inputs['message'],{class:'form-control', required:'required'}) }}
+        {%if(messages.has('message'))%}<span class="help-block">{{ trans(messages.first('message')) }}</span>{%endif%}
+    </div>
+</div>
+<div class="form-group button-bar">
+    <div class="col-xs-12">
+        <button type="reset" class="btn btn-default">{{ trans('contactForm.reset_button') }}</button>
+        <button type="submit" class="btn btn-primary">{{ trans('contactForm.send_button') }}</button>
+    </div>
+</div>
+
+{{ form_close() }}
+
+{% endif%}
+
+{% if(contact_success_message)%}
+<script type="text/javascript">
+    (function () {
+        var counter = 15;
+        setInterval(function () {
+            counter--;
+            if (counter >= 0) {
+                span = document.getElementById("countdown");
+                span.innerHTML = counter;
+            }
+            // Display 'counter' wherever you want to display it.
+            if (counter === 0) {
+                document.location.href = "/";
+            }
+        }, 1000);
+    })();
+</script>
+{% endif %}
