@@ -64,14 +64,14 @@ class ContactForm extends ComponentBase
         $firstname = post('firstname');
         $email = post('email');
         $subject = post('subject');
-        $message = post('message');
+        $message_body = post('message');
 
         $inputs = [
             'lastname' => $lastname,
             'firstname' => $firstname,
             'email' => $email,
             'subject' => $subject,
-            'message' => $message
+            'message' => $message_body
         ];
 
         $rules = [
@@ -103,10 +103,18 @@ class ContactForm extends ComponentBase
             $this->page["messages"] = $messages;
             $failed_message = "<p>" . $this->getOptions()['email_sent_failed'] . "</p>";
             $this->page["contact_error_message"] = $failed_message;
+            return;
         }
 
+        $data = compact('firstname', 'lastname', 'email', 'subject', 'message_body');
 
-        //$is_mail_sent = true;
+        $is_mail_sent = \Mail::send('algad.bootstrap::contactform.email.message', $data, function($message) use($firstname, $lastname, $email)
+                {
+                    $message->from($email, $firstname . " " . $lastname);
+                    $message->to($this->getOptions()['recipient_email']);
+                });
+
+
         if ($is_mail_sent)
         {
             $success_message = "<p>" . $this->getOptions()['email_sent_confirmation'] . "</p>";
