@@ -78,5 +78,12 @@ class Plugin extends PluginBase
                 ];
             }
 
+            public function registerMailTemplates()
+            {
+                return [
+                    'algad.bootstrap::mail.contactform.message' => 'Contact form email template'
+                ];
+            }
+
         }
         
