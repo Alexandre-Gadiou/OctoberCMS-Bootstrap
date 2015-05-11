@@ -18,6 +18,11 @@ return [
         'subject_required' => 'L\'objet est obligatoire',
         'message_required' => 'Le message est obligatoire',
         'send_button' => 'Envoyer',
-        'reset_button' => 'Annuler'
-    ]
+        'reset_button' => 'Annuler',
+        'redirect_message' => 'Vous allez être redirigé dans '
+    ],
+    'unit' => [
+        'seconds' => 'secondes',
+        'second' => 'seconde'
+    ],
 ];

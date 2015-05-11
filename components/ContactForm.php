@@ -101,14 +101,12 @@ class ContactForm extends ComponentBase
             $messages = $validator->messages();
             $this->page["inputs"] = $inputs;
             $this->page["messages"] = $messages;
-            $failed_message = "<p>" . $this->getOptions()['email_sent_failed'] . "</p>";
-            $this->page["contact_error_message"] = $failed_message;
             return;
         }
 
         $data = compact('firstname', 'lastname', 'email', 'subject', 'message_body');
 
-        $is_mail_sent = \Mail::send('algad.bootstrap::contactform.email.message', $data, function($message) use($firstname, $lastname, $email)
+        $is_mail_sent = \Mail::send('algad.bootstrap::mail.contactform.message', $data, function($message) use($firstname, $lastname, $email)
                 {
                     $message->from($email, $firstname . " " . $lastname);
                     $message->to($this->getOptions()['recipient_email']);
@@ -117,16 +115,11 @@ class ContactForm extends ComponentBase
 
         if ($is_mail_sent)
         {
-            $success_message = "<p>" . $this->getOptions()['email_sent_confirmation'] . "</p>";
-            if (!empty($this->getOptions()['redirection_time']))
-            {
-                $redirect_message = "<p>Vous allez être redirigé vers l'accueil dans  <span id=\"countdown\">" . $this->getOptions()['redirection_time'] . "</span> secondes</p>";
-                $this->page["contact_success_message"] = $success_message . $redirect_message;
-            }
-            else
-            {
-                $this->page["contact_success_message"] = $success_message;
-            }
+            $this->page["contact_success_message"] = $this->getOptions()['email_sent_confirmation'];
+        }
+        else
+        {
+            $this->page["contact_error_message"] = $this->getOptions()['email_sent_failed'];
         }
     }
 

@@ -18,6 +18,11 @@ return [
         'subject_required' => 'Subject field is required',
         'message_required' => 'Message field is required',
         'send_button' => 'Send',
-        'reset_button' => 'Reset'
-    ]
+        'reset_button' => 'Reset',
+        'redirect_message' => 'You will be redirected in '
+    ],
+    'unit' => [
+        'seconds' => 'seconds',
+        'second' => 'second'
+    ],
 ];

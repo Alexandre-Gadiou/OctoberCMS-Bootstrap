@@ -1,8 +1,26 @@
+{% set redirectPage = __SELF__.options['redirect_page'] %}
+{% set redirectTime = __SELF__.options['redirection_time'] %}
+
 {% if(contact_success_message)%}
-{{ contact_success_message|raw }}
+{% if(redirectPage)%}
+<p class="text-center">{{ contact_success_message }}</p>
+{% if(redirectTime)%}
+<p class="text-center">
+    {{ trans('contactForm.redirect_message') }} <span id="countdown">{{redirectTime}}</span> {{ trans('unit.seconds') }}
+</p>
+{% endif%}
+{%else%}
+<p class="text-center text-success" role="alert">
+    {{ contact_success_message }}
+</p>
+{% endif%}
 {% endif%}
 
-{% if( not contact_success_message )%}
+{% if(contact_error_message)%}
+<p class="text-center text-danger">{{ contact_error_message }}</p>
+{% endif%}
+
+{% if( (not contact_success_message) or (contact_success_message and not redirectPage) )%}
 
 {{ form_open({ request: 'sendContactForm', id:'contact-form',class:'form-horizontal',role:'form'}) }}
 
@@ -53,21 +71,32 @@
 
 {% endif%}
 
-{% if(contact_success_message)%}
+{% if(redirectTime and redirectPage)%}
 <script type="text/javascript">
     (function () {
-        var counter = 15;
-        setInterval(function () {
+    var counter = {{redirectTime}};
+            setInterval(function () {
             counter--;
-            if (counter >= 0) {
-                span = document.getElementById("countdown");
-                span.innerHTML = counter;
+                    if (counter >= 0) {
+            span = document.getElementById("countdown");
+                    span.innerHTML = counter;
             }
             // Display 'counter' wherever you want to display it.
             if (counter === 0) {
-                document.location.href = "/";
+            document.location.href = "{{redirectPage}}";
             }
-        }, 1000);
-    })();
+            }, 1000);
+    })();</script>
+{% endif %}
+
+{% if(contact_success_message and redirectPage and not redirectTime)%}
+<script type="text/javascript">
+            (function () {
+            var counter = 3;
+                    setInterval(function () {
+                    counter--;
+                            if (counter === 0) {document.location.href = "{{redirectPage}}"; }
+                    }, 1000);
+            })();
 </script>
 {% endif %}
