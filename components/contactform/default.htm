@@ -3,21 +3,23 @@
 
 {% if(contact_success_message)%}
 {% if(redirectPage)%}
-<p class="text-center">{{ contact_success_message }}</p>
-{% if(redirectTime)%}
-<p class="text-center">
-    {{ trans('contactForm.redirect_message') }} <span id="countdown">{{redirectTime}}</span> {{ trans('unit.seconds') }}
-</p>
-{% endif%}
+<div class="contact-form-message success-message"> 
+    <p>{{ contact_success_message }}</p>
+    {% if(redirectTime)%}
+    <p>
+        {{ trans('contactForm.redirect_message') }} <span id="countdown">{{redirectTime}}</span> {{ trans('unit.seconds') }}
+    </p>
+    {% endif%}
+</div>
 {%else%}
-<p class="text-center text-success" role="alert">
+<p class="contact-form-message success-message" role="alert">
     {{ contact_success_message }}
 </p>
 {% endif%}
 {% endif%}
 
 {% if(contact_error_message)%}
-<p class="text-center text-danger">{{ contact_error_message }}</p>
+<p class="contact-form-message error-message">{{ contact_error_message }}</p>
 {% endif%}
 
 {% if( (not contact_success_message) or (contact_success_message and not redirectPage) )%}
