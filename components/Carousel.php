@@ -37,6 +37,11 @@ class Carousel extends ComponentBase
                 'description' => 'Add small navigation buttons at the bottom of the player',
                 'type' => 'checkbox',
                 'default' => false
+            ],
+            'height' => [
+                'title' => 'Height',
+                'type' => 'string',
+                'default' => '500px'
             ]
         ];
     }
@@ -59,11 +64,6 @@ class Carousel extends ComponentBase
         }
 
         return $photos;
-    }
-
-    public function onRun()
-    {
-        
     }
 
 }

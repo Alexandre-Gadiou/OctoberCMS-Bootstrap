@@ -9,6 +9,16 @@
 {% set photosSize = photos|length %}
 {% set sliders = __SELF__.options['sliders']%}
 {% set indicators = __SELF__.options['indicators']%}
+{% set height = __SELF__.options['height'] %}
+
+{% if height %}
+<style>
+    .carousel .carousel-inner .item {
+        max-height: {{height}};
+        overflow:hidden;
+    }
+</style>
+{% endif %}
 
 <div id="{{ photosPlayerID }}" class="carousel" data-ride="carousel">
 
