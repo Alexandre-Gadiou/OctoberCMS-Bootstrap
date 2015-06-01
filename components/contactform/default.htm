@@ -58,7 +58,7 @@
 <div class="form-group {{ messages.has('message') ? 'has-error' : '' }}">
     <label for="message" class="col-sm-3 control-label">{{ trans('contactForm.message') }}</label>
     <div class="col-sm-9">
-        {{ form_textarea('message',inputs['message'],{class:'form-control', required:'required'}) }}
+        {{ form_textarea('message',inputs['message'],{class:'form-control', required:'required', rows:'5'}) }}
         {%if(messages.has('message'))%}<span class="help-block">{{ trans(messages.first('message')) }}</span>{%endif%}
     </div>
 </div>
