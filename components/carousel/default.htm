@@ -10,15 +10,36 @@
 {% set sliders = __SELF__.options['sliders']%}
 {% set indicators = __SELF__.options['indicators']%}
 {% set height = __SELF__.options['height'] %}
+{% set borderRadius = __SELF__.options['borderRadius'] %}
 
-{% if height %}
+
+
 <style>
-    .carousel .carousel-inner .item {
+    {% if height %}
+    #{{photosPlayerID}}.carousel .carousel-inner .item {
         max-height: {{height}};
         overflow:hidden;
     }
+    {% endif %}
+    {% if borderRadius %}
+    #{{photosPlayerID}}.carousel .carousel-inner .item {
+        -webkit-border-radius: {{borderRadius}};
+        border-radius: {{borderRadius}};
+    } 
+    #{{photosPlayerID}}.carousel .carousel-inner .item img {
+        -webkit-border-radius: {{borderRadius}};
+        border-radius: {{borderRadius}};
+    }
+    #{{photosPlayerID}}.carousel .carousel-control.left {
+        -webkit-border-radius: {{borderRadius}} 0 0 {{borderRadius}};
+        border-radius: {{borderRadius}} 0 0 {{borderRadius}};
+    }
+    #{{photosPlayerID}}.carousel .carousel-control.right {
+        -webkit-border-radius:  0 {{borderRadius}} {{borderRadius}} 0;
+        border-radius:  0 {{borderRadius}} {{borderRadius}} 0;
+    }
+    {% endif %}
 </style>
-{% endif %}
 
 <div id="{{ photosPlayerID }}" class="carousel" data-ride="carousel">
 

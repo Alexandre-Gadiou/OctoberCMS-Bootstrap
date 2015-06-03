@@ -12,7 +12,7 @@ class Carousel extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'Bootstrap Carousel',
+            'name' => 'Carousel',
             'description' => 'Photos player'
         ];
     }
@@ -24,6 +24,7 @@ class Carousel extends ComponentBase
             'photos_folder' => [
                 'title' => 'Photos folder',
                 'description' => 'Folder where the images to display are stored',
+                'default' => 'storage/app/media',
                 'type' => 'string'
             ],
             'sliders' => [
@@ -42,6 +43,11 @@ class Carousel extends ComponentBase
                 'title' => 'Height',
                 'type' => 'string',
                 'default' => '500px'
+            ],
+            'borderRadius' => [
+                'title' => 'Border radius',
+                'type' => 'string',
+                'default' => '10px'
             ]
         ];
     }
@@ -53,14 +59,11 @@ class Carousel extends ComponentBase
 
     public function getPhotosList()
     {
-        $theme = Theme::getEditTheme()->getDirName();
-        $folderPath = $this->property('photos_folder');
-        $directoryPath = "themes/" . $theme . "/assets/" . $folderPath;
-
         $photos = null;
-        if (File::exists($directoryPath))
+        $folderPath = $this->property('photos_folder');
+        if (File::exists($folderPath))
         {
-            $photos = File::files($directoryPath);
+            $photos = File::files($folderPath);
         }
 
         return $photos;
