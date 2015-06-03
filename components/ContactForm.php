@@ -11,7 +11,7 @@ class ContactForm extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'Bootstrap Contact Form',
+            'name' => 'Contact Form',
             'description' => 'Contact form'
         ];
     }

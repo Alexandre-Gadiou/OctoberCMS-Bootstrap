@@ -15,7 +15,7 @@ class Menu extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'Bootstrap Menu',
+            'name' => 'Menu',
             'description' => 'Navigation bar'
         ];
     }
