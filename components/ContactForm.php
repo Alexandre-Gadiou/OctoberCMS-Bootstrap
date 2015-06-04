@@ -50,9 +50,9 @@ class ContactForm extends ComponentBase
         ];
     }
 
-    public function getOptions()
+    public function getProperty($propertyName)
     {
-        return $this->getProperties();
+        return $this->property($propertyName);
     }
 
     public function sendContactForm()
@@ -109,17 +109,17 @@ class ContactForm extends ComponentBase
         $is_mail_sent = \Mail::send('algad.bootstrap::mail.contactform.message', $data, function($message) use($firstname, $lastname, $email)
                 {
                     $message->from($email, $firstname . " " . $lastname);
-                    $message->to($this->getOptions()['recipient_email']);
+                    $message->to($this->getProperty('recipient_email'));
                 });
 
 
         if ($is_mail_sent)
         {
-            $this->page["contact_success_message"] = $this->getOptions()['email_sent_confirmation'];
+            $this->page["contact_success_message"] = $this->getProperty('email_sent_confirmation');
         }
         else
         {
-            $this->page["contact_error_message"] = $this->getOptions()['email_sent_failed'];
+            $this->page["contact_error_message"] = $this->getProperty('email_sent_failed');
         }
     }
 
