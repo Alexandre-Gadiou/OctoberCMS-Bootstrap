@@ -3,7 +3,6 @@
 namespace Algad\Bootstrap\Components;
 
 use Cms\Classes\ComponentBase;
-use Cms\Classes\Theme;
 use Illuminate\Support\Facades\File;
 
 class Carousel extends ComponentBase
@@ -52,9 +51,9 @@ class Carousel extends ComponentBase
         ];
     }
 
-    public function getOptions()
+    public function getProperty($propertyName)
     {
-        return $this->getProperties();
+        return $this->property($propertyName);
     }
 
     public function getPhotosList()
@@ -65,7 +64,6 @@ class Carousel extends ComponentBase
         {
             $photos = File::files($folderPath);
         }
-
         return $photos;
     }
 

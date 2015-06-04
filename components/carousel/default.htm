@@ -7,10 +7,10 @@
 
 {% set photos = __SELF__.photosList %}
 {% set photosSize = photos|length %}
-{% set sliders = __SELF__.options['sliders']%}
-{% set indicators = __SELF__.options['indicators']%}
-{% set height = __SELF__.options['height'] %}
-{% set borderRadius = __SELF__.options['borderRadius'] %}
+{% set sliders = __SELF__.getProperty('sliders') %}
+{% set indicators = __SELF__.getProperty('indicators') %}
+{% set height = __SELF__.getProperty('height') %}
+{% set borderRadius = __SELF__.getProperty('borderRadius') %}
 
 
 
