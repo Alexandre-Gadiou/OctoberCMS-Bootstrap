@@ -90,11 +90,6 @@ class Menu extends ComponentBase
         ]);
     }
 
-    public function onRun()
-    {
-        
-    }
-
     private static function listPages()
     {
         if (!($theme = Theme::getEditTheme()))
