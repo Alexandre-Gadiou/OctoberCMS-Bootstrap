@@ -3,6 +3,7 @@
 namespace Algad\Bootstrap\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class ContactForm extends ComponentBase
@@ -106,9 +107,10 @@ class ContactForm extends ComponentBase
 
         $data = compact('firstname', 'lastname', 'email', 'subject', 'message_body');
 
-        $is_mail_sent = \Mail::send('algad.bootstrap::mail.contactform.message', $data, function($message) use($firstname, $lastname, $email)
+        $is_mail_sent = Mail::send('algad.bootstrap::mail.contactform.message', $data, function($message) use($firstname, $lastname, $email)
                 {
                     $message->from($email, $firstname . " " . $lastname);
+                    $message->addReplyTo($email, $lastname . ' ' . $firstname);
                     $message->to($this->getProperty('recipient_email'));
                 });
 
