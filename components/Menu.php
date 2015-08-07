@@ -100,8 +100,8 @@ class Menu extends ComponentBase
         $result = [];
         foreach ($pages as $page)
         {
-            $page->addVisible('menu_text');
-            $page->addVisible('menu_order');
+            $page->fill(['menu_text']);
+            $page->fill(['menu_order']);
             if ($page->not_show_menu != "1" && !empty($page->menu_order))
             {
                 $result[$page->menu_order] = [
