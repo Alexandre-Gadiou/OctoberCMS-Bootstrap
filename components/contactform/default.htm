@@ -28,36 +28,36 @@
 
 
 <div class="form-group {{ messages.has('lastname') ? 'has-error' : '' }}">
-    <label for="lastname" class="col-sm-3 col-md-2 control-label">{{ trans('contactForm.lastname') }}</label>
-    <div class="col-sm-9 col-md-10">
+    <label for="lastname" class="col-sm-3 col-md-3 control-label">{{ trans('contactForm.lastname') }}</label>
+    <div class="col-sm-9 col-md-9">
         {{ form_text('lastname',inputs['lastname'],{class:'form-control', required:'required' }) }}
         {%if(messages.has('lastname'))%}<span class="help-block">{{ trans(messages.first('lastname')) }}</span>{%endif%}
     </div>
 </div>
 <div class="form-group {{ messages.has('firstname') ? 'has-error' : '' }}">
-    <label for="firstname" class="col-sm-3 col-md-2 control-label">{{ trans('contactForm.firstname') }}</label>
-    <div class="col-sm-9 col-md-10">
+    <label for="firstname" class="col-sm-3 col-md-3 control-label">{{ trans('contactForm.firstname') }}</label>
+    <div class="col-sm-9 col-md-9">
         {{ form_text('firstname',inputs['firstname'],{class:'form-control', required:'required'}) }}
         {%if(messages.has('firstname'))%}<span class="help-block">{{ trans(messages.first('firstname')) }}</span>{%endif%}
     </div>
 </div>
 <div class="form-group {{ messages.has('email') ? 'has-error' : '' }}">
-    <label for="email" class="col-sm-3 col-md-2 control-label">{{ trans('contactForm.email') }}</label>
-    <div class="col-sm-9 col-md-10">
+    <label for="email" class="col-sm-3 col-md-3 control-label">{{ trans('contactForm.email') }}</label>
+    <div class="col-sm-9 col-md-9">
         {{ form_text('email',inputs['email'],{class:'form-control', required:'required'}) }}
         {%if(messages.has('email'))%}<span class="help-block">{{ trans(messages.first('email')) }}</span>{%endif%}
     </div>        
 </div>
 <div class="form-group {{ messages.has('subject') ? 'has-error' : '' }}">
-    <label for="subject" class="col-sm-3 col-md-2 control-label">{{ trans('contactForm.subject') }}</label>
-    <div class="col-sm-9 col-md-10">
+    <label for="subject" class="col-sm-3 col-md-3 control-label">{{ trans('contactForm.subject') }}</label>
+    <div class="col-sm-9 col-md-9">
         {{ form_text('subject',inputs['subject'],{class:'form-control', required:'required'}) }}
         {%if(messages.has('subject'))%}<span class="help-block">{{ trans(messages.first('subject')) }}</span>{%endif%}
     </div>
 </div>
 <div class="form-group {{ messages.has('message') ? 'has-error' : '' }}">
-    <label for="message" class="col-sm-3 col-md-2 control-label">{{ trans('contactForm.message') }}</label>
-    <div class="col-sm-9 col-md-10">
+    <label for="message" class="col-sm-3 col-md-3 control-label">{{ trans('contactForm.message') }}</label>
+    <div class="col-sm-9 col-md-9">
         {{ form_textarea('message',inputs['message'],{class:'form-control', required:'required', rows:'5'}) }}
         {%if(messages.has('message'))%}<span class="help-block">{{ trans(messages.first('message')) }}</span>{%endif%}
     </div>
