@@ -1,0 +1,28 @@
+#scroll_top {
+    border: none;
+    text-align:center;
+    text-transform:uppercase;
+    color:#FFFFFF;
+    background-color: #555555;
+    padding: 4px 20px;
+    position:fixed;
+    bottom:5px;
+    right:5px;
+    display:none;
+    max-height:44px;
+}
+
+#scroll_top .button-icon {
+    display: block;
+    font-size: 1.5em;
+    line-height: 15px;
+}
+
+#scroll_top .button-text {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#scroll_top:hover, #scroll_top:focus {
+    background-color: #666666;
+}

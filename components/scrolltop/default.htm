@@ -1,0 +1,68 @@
+<button id="scroll_top">
+    <i class="button-icon fa fa-angle-up"></i>
+    <span class="button-text">Remonter</span>
+</button>
+
+
+<script>
+    window.onload = function () {
+        // When user click on scrollTopButton
+        (function () {
+            $('#scroll_top').click(function () {
+                this.disabled = true;
+
+                // 'html' for Mozilla Firefox, 'body' for other browsers
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 800, function () {
+                    this.disabled = false;
+                }.bind(this));
+
+                this.blur();
+            });
+        })();
+
+
+        (function () {
+
+            var setScrollTop = function () {
+
+                var scrollTopButton = $('#scroll_top');
+                var scroll = $(window).scrollTop();
+                var windowWidth = $(window).width();
+
+                // Set up ScrollTopButton position
+                if (windowWidth > 991 && $(window).scrollTop() > 0) {
+                    scrollTopButton.css("position", "fixed");
+                    scrollTopButton.css("bottom", "10px");
+                    scrollTopButton.css("right", "10px");
+                }
+
+                // If user has played with the scrollbar, ScrollTopButton is visible
+                if (scroll != 0 && windowWidth > 991) {
+                    scrollTopButton.fadeIn();
+                } else {
+                    scrollTopButton.fadeOut();
+                }
+
+            };
+
+            setScrollTop();
+
+            // On scroll, calculate scrollTopButton position
+            $(window).scroll(function () {
+                setScrollTop();
+            });
+
+            // On resize, calculate scrollTopButton position
+            $(window).resize(function () {
+                setScrollTop();
+            });
+
+
+        })();
+    };
+
+
+</script>
+
