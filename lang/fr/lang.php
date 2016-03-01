@@ -19,10 +19,20 @@ return [
         'message_required' => 'Le message est obligatoire',
         'send_button' => 'Envoyer',
         'reset_button' => 'Annuler',
-        'redirect_message' => 'Vous allez être redirigé dans '
+        'redirect_message' => 'Vous allez être redirigé dans ',
     ],
     'unit' => [
         'seconds' => 'secondes',
-        'second' => 'seconde'
+        'second' => 'seconde',
+    ],
+    'Event' => [
+        'title' => 'Titre',
+        'description' => 'Description',
+        'date' => 'Date',
+        'slug' => 'Slug',
+    ],
+    'menu' => [
+        'events' => 'Évenement',
+        'calendar' => 'Agenda',
     ],
 ];

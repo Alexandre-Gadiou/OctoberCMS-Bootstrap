@@ -25,4 +25,14 @@ return [
         'seconds' => 'seconds',
         'second' => 'second'
     ],
+    'Event' => [
+        'title' => 'Title',
+        'description' => 'Description',
+        'date' => 'Date',
+        'slug' => 'Slug',
+    ],
+    'menu' => [
+        'events' => 'Events',
+        'calendar' => 'Calendar',
+    ],
 ];

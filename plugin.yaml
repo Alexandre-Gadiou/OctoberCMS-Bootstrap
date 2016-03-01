@@ -1,0 +1,22 @@
+plugin:
+    name: 'algad.bootstrap::lang.plugin.name'
+    description: 'algad.bootstrap::lang.plugin.description'
+    author: algad
+    icon: oc-icon-flask
+    homepage: 'https://github.com/Alexandre-Gadiou/OctoberCMS-Bootstrap'
+permissions:
+    algad.bootstrap.manage.events:
+        tab: 'algad.bootstrap::lang.plugin.name'
+        label: 'algad.bootstrap::lang.event.manage_events'
+navigation:
+    Calendar:
+        label: 'algad.bootstrap::lang.menu.calendar'
+        url: algad/bootstrap/events
+        icon: icon-calendar
+        permissions:
+            - algad.bootstrap.manage.events
+        sideMenu:
+            events:
+                label: 'algad.bootstrap::lang.menu.events'
+                url: algad/bootstrap/events
+                icon: icon-tag

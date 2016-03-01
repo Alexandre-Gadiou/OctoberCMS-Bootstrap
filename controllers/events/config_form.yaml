@@ -1,0 +1,11 @@
+name: Events
+modelClass: Algad\Bootstrap\Models\Event
+form: $/algad/bootstrap/models/event/fields.yaml
+defaultRedirect: algad/bootstrap/events
+create:
+    redirect: 'algad/bootstrap/events/update/:id'
+    redirectClose: algad/bootstrap/events
+update:
+    redirect: algad/bootstrap/events
+    redirectClose: algad/bootstrap/events
+preview: {  }
