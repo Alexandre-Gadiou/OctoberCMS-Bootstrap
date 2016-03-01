@@ -2,6 +2,3 @@
 1.0.2:
     - 'Created table algad_bootstrap_events'
     - builder_table_create_algad_bootstrap_events.php
-1.0.3:
-    - 'Updated table algad_bootstrap_events'
-    - builder_table_update_algad_bootstrap_events.php
