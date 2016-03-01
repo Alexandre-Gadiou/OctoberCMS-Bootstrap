@@ -32,7 +32,7 @@ return [
         'slug' => 'Slug',
     ],
     'menu' => [
-        'events' => 'Évenement',
+        'events' => 'Évenements',
         'calendar' => 'Agenda',
     ],
 ];
