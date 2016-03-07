@@ -22,6 +22,11 @@ class Agenda extends ComponentBase
     public function defineProperties()
     {
         return [
+            'width' => [
+                'title' => 'Width',
+                'type' => 'string',
+                'default' => '500px',
+            ],
             'view' => [
                 'title' => 'View',
                 'default' => 'default',
@@ -31,6 +36,11 @@ class Agenda extends ComponentBase
                 ],
             ]
         ];
+    }
+
+    public function getProperty($propertyName)
+    {
+        return $this->property($propertyName);
     }
 
     public function onRender()

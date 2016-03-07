@@ -1,4 +1,27 @@
-<div class="agenda">
+{% if not (__SELF__.alias is empty) %}
+{% set agendaID = __SELF__.alias %}
+{% else %}
+{% set agendaID = __SELF__.id %}
+{% endif %}
+
+{% set width = __SELF__.getProperty('width') %}
+
+<style>
+    {% if width %}
+    #{{agendaID}}.agenda {
+        width: {{width}};
+        min-width:500px;
+    }
+    {% endif %}
+    @media (max-width:768px){
+        #{{agendaID}}.agenda {
+            width: 100%;
+            min-width:100%;
+        }
+    }
+</style>
+
+<div id="{{ agendaID }}" class="agenda" >
     <!-- Responsive calendar - START -->
     <div class="responsive-calendar">
         <div class="controls">
@@ -27,7 +50,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-    $(".responsive-calendar").responsiveCalendar({
+    $("#{{agendaID}} .responsive-calendar").responsiveCalendar({
     time: '2016-03',
             translateMonths: [
                     "{{ trans('agenda.month1') }}",
@@ -42,9 +65,17 @@
                     "{{ trans('agenda.month10') }}",
                     "{{ trans('agenda.month11') }}",
                     "{{ trans('agenda.month12') }}"],
-            events: { {{eventListJS | raw}} }
+            events: { {{eventListJS | raw}} }  });
+            if ($(window).width() < 768){
+    $("#{{agendaID}} .responsive-calendar .day.header").each(
+            function (index, value) {
+            var $this = $(this);
+                    var day = $this.text();
+                    $this.text(day.charAt(0).toUpperCase());
+            }
+    );
+    }
 
-    });
     });
 </script>
 
