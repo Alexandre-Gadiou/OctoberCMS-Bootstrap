@@ -36,6 +36,13 @@ return [
         'calendar' => 'Calendar',
     ],
     'agenda' => [
+        'name' => 'Agenda',
+        'description' => 'Calendar with events',
+        'width' => 'Width',
+        'view' => [
+            'field' => 'View',
+            'default' => 'default',
+        ],
         'prev' => 'Prev',
         'next' => 'Next',
         'day1' => 'Mon',

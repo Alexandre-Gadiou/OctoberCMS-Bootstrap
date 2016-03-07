@@ -36,6 +36,13 @@ return [
         'calendar' => 'Agenda',
     ],
     'agenda' => [
+        'name' => 'Agenda',
+        'description' => 'Calendrier listant les événements',
+        'width' => 'Taille',
+        'view' => [
+            'field' => 'Vue',
+            'default' => 'standard',
+        ],
         'prev' => 'Précédent',
         'next' => 'Suivant',
         'day1' => 'Lundi',

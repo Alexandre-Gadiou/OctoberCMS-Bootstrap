@@ -14,8 +14,8 @@ class Agenda extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'Agenda',
-            'description' => 'Calendar with events',
+            'name' => 'algad.bootstrap::lang.agenda.name',
+            'description' => 'algad.bootstrap::lang.agenda.description',
         ];
     }
 
@@ -23,16 +23,16 @@ class Agenda extends ComponentBase
     {
         return [
             'width' => [
-                'title' => 'Width',
+                'title' => 'algad.bootstrap::lang.agenda.width',
                 'type' => 'string',
                 'default' => '500px',
             ],
             'view' => [
-                'title' => 'View',
+                'title' => 'algad.bootstrap::lang.agenda.view.field',
                 'default' => 'default',
                 'type' => 'dropdown',
                 'options' => [
-                    'default' => 'default',
+                    'default' => 'algad.bootstrap::lang.agenda.view.default',
                 ],
             ]
         ];
