@@ -22,7 +22,7 @@ class ScrollTop extends ComponentBase
 
     public function onRun()
     {
-        $this->addCss('/plugins/algad/bootstrap/components/assets/css/scrollTop.css');
+        $this->addCss('/plugins/algad/bootstrap/assets/css/scrollTop.css');
     }
 
 }
