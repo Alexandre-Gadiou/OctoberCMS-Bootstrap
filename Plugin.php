@@ -76,6 +76,7 @@ class Plugin extends PluginBase
                     'Algad\Bootstrap\Components\Menu' => 'menu',
                     'Algad\Bootstrap\Components\ContactForm' => 'contactform',
                     'Algad\Bootstrap\Components\ScrollTop' => 'scrolltop',
+                    'Algad\Bootstrap\Components\Agenda' => 'agenda',
                 ];
             }
 

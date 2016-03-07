@@ -1,0 +1,50 @@
+<div class="agenda">
+    <!-- Responsive calendar - START -->
+    <div class="responsive-calendar">
+        <div class="controls">
+            <a class="pull-left" data-go="prev"><div class="btn btn-primary">{{ trans('agenda.prev') }}</div></a>
+            <h4><span data-head-year></span> <span data-head-month></span></h4>
+            <a class="pull-right" data-go="next"><div class="btn btn-primary">{{ trans('agenda.next') }}</div></a>
+        </div><hr/>
+        <div class="day-headers">
+            <div class="day header">{{ trans('agenda.day1') }}</div>
+            <div class="day header">{{ trans('agenda.day2') }}</div>
+            <div class="day header">{{ trans('agenda.day3') }}</div>
+            <div class="day header">{{ trans('agenda.day4') }}</div>
+            <div class="day header">{{ trans('agenda.day5') }}</div>
+            <div class="day header">{{ trans('agenda.day6') }}</div>
+            <div class="day header">{{ trans('agenda.day7') }}</div>
+        </div>
+        <div class="days" data-group="days">
+
+        </div>
+    </div>
+    <!-- Responsive calendar - END -->  
+</div>
+
+{% set eventList = __SELF__.eventList %}
+{% set eventListJS = __SELF__.eventListJS %}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    $(".responsive-calendar").responsiveCalendar({
+    time: '2016-03',
+            translateMonths: [
+                    "{{ trans('agenda.month1') }}",
+                    "{{ trans('agenda.month2') }}",
+                    "{{ trans('agenda.month3') }}",
+                    "{{ trans('agenda.month4') }}",
+                    "{{ trans('agenda.month5') }}",
+                    "{{ trans('agenda.month6') }}",
+                    "{{ trans('agenda.month7') }}",
+                    "{{ trans('agenda.month8') }}",
+                    "{{ trans('agenda.month9') }}",
+                    "{{ trans('agenda.month10') }}",
+                    "{{ trans('agenda.month11') }}",
+                    "{{ trans('agenda.month12') }}"],
+            events: { {{eventListJS | raw}} }
+
+    });
+    });
+</script>
+
