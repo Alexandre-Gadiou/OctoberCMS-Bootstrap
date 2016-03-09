@@ -65,4 +65,26 @@ return [
         'month11' => 'Novembre',
         'month12' => 'Décembre',
     ],
+    'carousel' => [
+        'name' => 'Carousel',
+        'description' => 'Galerie Photos',
+        'photos_folder' => [
+            'name' => 'Dossier photos',
+            'tooltip' => 'Dossier à partir duquel sont chargées les images',
+        ],
+        'sliders' => [
+            'name' => 'Flêches',
+            'tooltip' => 'Boutons de navigation suivant / précédent',
+        ],
+        'indicators' => [
+            'name' => 'Index',
+            'tooltip' => 'Petits boutons de navigation sous forme de bulles en bas du player',
+        ],
+        'height' => [
+            'name' => 'Taille'
+        ],
+        'borderRadius' => [
+            'name' => 'Angles arrondis'
+        ]
+    ],
 ];

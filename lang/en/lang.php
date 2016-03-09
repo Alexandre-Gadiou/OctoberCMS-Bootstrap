@@ -65,4 +65,26 @@ return [
         'month11' => 'November',
         'month12' => 'Décember',
     ],
+    'carousel' => [
+        'name' => 'Carousel',
+        'description' => 'Photos player',
+        'photos_folder' => [
+            'name' => 'Photos folder',
+            'tooltip' => 'Folder where the images to display are stored',
+        ],
+        'sliders' => [
+            'name' => 'Show sliders',
+            'tooltip' => 'Add previous and next navigation buttons over the player',
+        ],
+        'indicators' => [
+            'name' => 'Show indicators',
+            'tooltip' => 'Add small navigation buttons at the bottom of the player',
+        ],
+        'height' => [
+            'name' => 'Height',
+        ],
+        'borderRadius' => [
+            'name' => 'Border radius',
+        ]
+    ]
 ];

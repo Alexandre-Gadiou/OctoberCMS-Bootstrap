@@ -11,8 +11,8 @@ class Carousel extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'Carousel',
-            'description' => 'Photos player'
+            'name' => 'algad.bootstrap::lang.carousel.name',
+            'description' => 'algad.bootstrap::lang.carousel.description'
         ];
     }
 
@@ -21,30 +21,30 @@ class Carousel extends ComponentBase
         return [
 
             'photos_folder' => [
-                'title' => 'Photos folder',
-                'description' => 'Folder where the images to display are stored',
+                'title' => 'algad.bootstrap::lang.carousel.photos_folder.name',
+                'description' => 'algad.bootstrap::lang.carousel.photos_folder.tooltip',
                 'default' => 'storage/app/media',
                 'type' => 'string'
             ],
             'sliders' => [
-                'title' => 'Show sliders',
-                'description' => 'Add previous and next navigation buttons over the player',
+                'title' => 'algad.bootstrap::lang.carousel.sliders.name',
+                'description' => 'algad.bootstrap::lang.carousel.sliders.tooltip',
                 'type' => 'checkbox',
                 'default' => true
             ],
             'indicators' => [
-                'title' => 'Show indicators',
-                'description' => 'Add small navigation buttons at the bottom of the player',
+                'title' => 'algad.bootstrap::lang.carousel.indicators.name',
+                'description' => 'algad.bootstrap::lang.carousel.indicators.tooltip',
                 'type' => 'checkbox',
                 'default' => false
             ],
             'height' => [
-                'title' => 'Height',
+                'title' => 'algad.bootstrap::lang.carousel.height.name',
                 'type' => 'string',
                 'default' => '500px'
             ],
             'borderRadius' => [
-                'title' => 'Border radius',
+                'title' => 'algad.bootstrap::lang.carousel.borderRadius.name',
                 'type' => 'string',
                 'default' => '10px'
             ]
