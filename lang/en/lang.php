@@ -38,10 +38,14 @@ return [
     'agenda' => [
         'name' => 'Agenda',
         'description' => 'Calendar with events',
-        'width' => 'Width',
+        'width' => [
+            'name' => 'Width',
+        ],
         'view' => [
-            'field' => 'View',
-            'default' => 'default',
+            'name' => 'View',
+            'option' => [
+                'default' => 'default',
+            ]
         ],
         'prev' => 'Prev',
         'next' => 'Next',

@@ -23,16 +23,16 @@ class Agenda extends ComponentBase
     {
         return [
             'width' => [
-                'title' => 'algad.bootstrap::lang.agenda.width',
+                'title' => 'algad.bootstrap::lang.agenda.width.name',
                 'type' => 'string',
                 'default' => '500px',
             ],
             'view' => [
-                'title' => 'algad.bootstrap::lang.agenda.view.field',
+                'title' => 'algad.bootstrap::lang.agenda.view.name',
                 'default' => 'default',
                 'type' => 'dropdown',
                 'options' => [
-                    'default' => 'algad.bootstrap::lang.agenda.view.default',
+                    'default' => 'algad.bootstrap::lang.agenda.view.option.default',
                 ],
             ]
         ];
