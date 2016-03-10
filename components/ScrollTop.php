@@ -10,8 +10,8 @@ class ScrollTop extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'Scroll Top',
-            'description' => 'Scroll top button'
+            'name' => 'algad.bootstrap::lang.scrollTop.name',
+            'description' => 'algad.bootstrap::lang.scrollTop.description'
         ];
     }
 

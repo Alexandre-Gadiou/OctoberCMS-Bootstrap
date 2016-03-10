@@ -91,4 +91,8 @@ return [
             'name' => 'Angles arrondis'
         ]
     ],
+    'scrollTop' => [
+        'name' => 'Bouton ScrollTop',
+        'description' => 'Bouton retour en haut de page',
+    ],
 ];

@@ -90,5 +90,9 @@ return [
         'borderRadius' => [
             'name' => 'Border radius',
         ]
-    ]
+    ],
+    'scrollTop' => [
+        'name' => 'Scroll Top',
+        'description' => 'Scroll top button',
+    ],
 ];
