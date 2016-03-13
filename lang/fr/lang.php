@@ -62,7 +62,7 @@ return [
         'month4' => 'Avril',
         'month5' => 'Mai',
         'month6' => 'Juin',
-        'month7' => 'Juilet',
+        'month7' => 'Juillet',
         'month8' => 'Août',
         'month9' => 'Septembre',
         'month10' => 'Octobre',
