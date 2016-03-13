@@ -3,6 +3,9 @@ modelClass: Algad\Bootstrap\Models\Event
 list: $/algad/bootstrap/models/event/columns.yaml
 recordUrl: 'algad/bootstrap/events/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'
+defaultSort:
+    column: date
+    direction: asc
 showSetup: true
 showCheckboxes: true
 toolbar:
