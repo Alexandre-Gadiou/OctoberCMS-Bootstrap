@@ -1,11 +1,11 @@
 columns:
-    title:
-        label: 'algad.bootstrap::lang.Event.title'
+    date:
+        label: 'algad.bootstrap::lang.Event.date'
         type: text
         searchable: true
         sortable: true
-    date:
-        label: 'algad.bootstrap::lang.Event.date'
+    title:
+        label: 'algad.bootstrap::lang.Event.title'
         type: text
         searchable: true
         sortable: true
