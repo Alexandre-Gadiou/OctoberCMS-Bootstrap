@@ -44,7 +44,14 @@ class Plugin extends PluginBase
                 'label' => 'algad.bootstrap::lang.menu.calendar',
                 'url' => Backend::url('algad/bootstrap/events'),
                 'icon' => 'icon-calendar',
-                'permissions' => ['algad.bootstrap.manage_events']
+                'permissions' => ['algad.bootstrap.manage_events'],
+                'sideMenu' => [
+                    'events' => [
+                        'label' => 'algad.bootstrap::lang.menu.events',
+                        'url' => Backend::url('algad/bootstrap/events'),
+                        'icon' => 'icon-tag',
+                    ]
+                ]
             ]
         ];
     }
