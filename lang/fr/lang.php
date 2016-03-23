@@ -5,6 +5,7 @@ return [
         'name' => 'Bootstrap Components',
         'description' => 'Composants Bootstrap pour October CMS',
     ],
+    'manage_events' => 'Gestion Agenda',
     'contactForm' => [
         'lastname' => 'Nom',
         'firstname' => 'Prénom',

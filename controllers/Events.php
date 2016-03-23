@@ -1,17 +1,18 @@
-<?php namespace Algad\Bootstrap\Controllers;
+<?php
+
+namespace Algad\Bootstrap\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
 
 class Events extends Controller
 {
-    public $implement = ['Backend\Behaviors\ListController','Backend\Behaviors\FormController'];
-    
+
+    public $implement = ['Backend\Behaviors\ListController', 'Backend\Behaviors\FormController'];
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
-
     public $requiredPermissions = [
-        'algad.bootstrap.manage.events' 
+        'algad.bootstrap.manage_events'
     ];
 
     public function __construct()
@@ -19,4 +20,5 @@ class Events extends Controller
         parent::__construct();
         BackendMenu::setContext('Algad.Bootstrap', 'Calendar', 'events');
     }
+
 }

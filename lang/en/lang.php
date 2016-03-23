@@ -5,6 +5,7 @@ return [
         'name' => 'Bootstrap Components',
         'description' => 'Bootstrap components for October CMS',
     ],
+    'manage_events' => 'Manage events',
     'contactForm' => [
         'lastname' => 'Lastname',
         'firstname' => 'Firstname',
@@ -29,7 +30,7 @@ return [
         'title' => 'Title',
         'description' => 'Description',
         'date' => 'Date',
-        'slug' => 'Slug',
+        'slug' => 'Slug'
     ],
     'menu' => [
         'events' => 'Events',

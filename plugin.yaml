@@ -5,16 +5,16 @@ plugin:
     icon: oc-icon-flask
     homepage: 'https://github.com/Alexandre-Gadiou/OctoberCMS-Bootstrap'
 permissions:
-    algad.bootstrap.manage.events:
+    algad.bootstrap.manage_events:
         tab: 'algad.bootstrap::lang.plugin.name'
-        label: 'algad.bootstrap::lang.event.manage_events'
+        label: 'algad.bootstrap::lang.manage_events'
 navigation:
     Calendar:
         label: 'algad.bootstrap::lang.menu.calendar'
         url: algad/bootstrap/events
         icon: icon-calendar
         permissions:
-            - algad.bootstrap.manage.events
+            - algad.bootstrap.manage_events
         sideMenu:
             events:
                 label: 'algad.bootstrap::lang.menu.events'

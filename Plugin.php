@@ -5,6 +5,7 @@ namespace Algad\Bootstrap;
 use System\Classes\PluginBase;
 use \RainLab\Translate\Classes\Translator;
 use Event;
+use Backend;
 use Lang;
 
 /**
@@ -26,6 +27,25 @@ class Plugin extends PluginBase
             'author' => 'Alexander GADIOU',
             'homepage' => 'http://alexandre-gadiou.appspot.com',
             'icon' => 'icon-flask'
+        ];
+    }
+
+//    public function registerPermissions()
+//    {
+//        return [
+//            'algad.bootstrap.manage_events' => ['tab' => 'algad.bootstrap::lang.plugin.name', 'label' => 'algad.bootstrap::lang.manage_events']
+//        ];
+//    }
+//
+    public function registerNavigation()
+    {
+        return [
+            'Calendar' => [
+                'label' => 'algad.bootstrap::lang.menu.calendar',
+                'url' => Backend::url('algad/bootstrap/events'),
+                'icon' => 'icon-calendar',
+                'permissions' => ['algad.bootstrap.manage_events']
+            ]
         ];
     }
 
