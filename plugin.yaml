@@ -9,7 +9,7 @@ permissions:
         tab: 'algad.bootstrap::lang.plugin.name'
         label: 'algad.bootstrap::lang.manage_events'
 navigation:
-    Calendar:
+    calendar:
         label: 'algad.bootstrap::lang.menu.calendar'
         url: algad/bootstrap/events
         icon: icon-calendar

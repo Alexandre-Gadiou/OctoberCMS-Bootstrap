@@ -40,7 +40,7 @@ class Plugin extends PluginBase
     public function registerNavigation()
     {
         return [
-            'Calendar' => [
+            'calendar' => [
                 'label' => 'algad.bootstrap::lang.menu.calendar',
                 'url' => Backend::url('algad/bootstrap/events'),
                 'icon' => 'icon-calendar',
