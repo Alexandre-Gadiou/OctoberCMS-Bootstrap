@@ -18,7 +18,7 @@ class Events extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Algad.Bootstrap', 'Calendar', 'events');
+        BackendMenu::setContext('Algad.Bootstrap', 'calendar', 'events');
     }
 
 }
