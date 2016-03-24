@@ -5,7 +5,6 @@ namespace Algad\Bootstrap;
 use System\Classes\PluginBase;
 use \RainLab\Translate\Classes\Translator;
 use Event;
-use Backend;
 use Lang;
 
 /**
