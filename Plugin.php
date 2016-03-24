@@ -14,22 +14,6 @@ class Plugin extends PluginBase
 {
 
     /**
-     * Algad Bootstrap plugin information.
-     *
-     * @return array
-     */
-    public function pluginDetails()
-    {
-        return [
-            'name' => 'algad.bootstrap::lang.plugin.name',
-            'description' => 'algad.bootstrap::lang.plugin.description',
-            'author' => 'Alexander GADIOU',
-            'homepage' => 'http://alexandre-gadiou.appspot.com',
-            'icon' => 'icon-flask'
-        ];
-    }
-
-    /**
      * Add a tab 'Menu' in page settings
      *
      */
