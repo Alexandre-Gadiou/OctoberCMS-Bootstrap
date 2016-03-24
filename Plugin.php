@@ -30,32 +30,6 @@ class Plugin extends PluginBase
         ];
     }
 
-//    public function registerPermissions()
-//    {
-//        return [
-//            'algad.bootstrap.manage_events' => ['tab' => 'algad.bootstrap::lang.plugin.name', 'label' => 'algad.bootstrap::lang.manage_events']
-//        ];
-//    }
-//
-    public function registerNavigation()
-    {
-        return [
-            'calendar' => [
-                'label' => 'algad.bootstrap::lang.menu.calendar',
-                'url' => Backend::url('algad/bootstrap/events'),
-                'icon' => 'icon-calendar',
-                'permissions' => ['algad.bootstrap.manage_events'],
-                'sideMenu' => [
-                    'events' => [
-                        'label' => 'algad.bootstrap::lang.menu.events',
-                        'url' => Backend::url('algad/bootstrap/events'),
-                        'icon' => 'icon-tag',
-                    ]
-                ]
-            ]
-        ];
-    }
-
     /**
      * Add a tab 'Menu' in page settings
      *
