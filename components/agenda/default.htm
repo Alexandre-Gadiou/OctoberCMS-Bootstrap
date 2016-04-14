@@ -48,10 +48,12 @@
 {% set eventList = __SELF__.eventList %}
 {% set eventListJS = __SELF__.eventListJS %}
 
+{% set currentYear = __SELF__.eventListJS %}
+
 <script type="text/javascript">
     $(document).ready(function () {
     $("#{{agendaID}} .responsive-calendar").responsiveCalendar({
-    time: '2016-03',
+    time: '{{ "now"|date("Y") }}-{{ "now"|date("m") }}',
             translateMonths: [
                     "{{ trans('agenda.month1') }}",
                     "{{ trans('agenda.month2') }}",
