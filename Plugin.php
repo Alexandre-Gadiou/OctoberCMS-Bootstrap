@@ -48,6 +48,10 @@ class Plugin extends PluginBase
                 'trans' => function($key)
                 {
                     return Lang::get('algad.bootstrap::lang.' . $key, [], Translator::instance()->getLocale());
+                },
+                        'config' => function($key)
+                {
+                    return config($key);
                 }
                     ]
                 ];
