@@ -41,7 +41,7 @@
     {% endif %}
 </style>
 
-<div id="{{ photosPlayerID }}" class="carousel" data-ride="carousel">
+<div id="{{ photosPlayerID }}" class="carousel" data-ride="carousel" itemscope itemtype="http://schema.org/ImageGallery">
 
     {% if indicators %}
     <ol class="carousel-indicators">
@@ -63,12 +63,12 @@
         {% for photo in photos %}
 
         {% if loop.first %}
-        <div class="item active">
+        <div class="item active" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" >
             {% else %}
-            <div class="item">
+            <div class="item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" >
                 {% endif %}
 
-                <img src="/{{ photo }}" alt="...">
+                <img itemprop="contentUrl" src="/{{ photo }}" alt="...">
 
             </div>
             {% endfor %}
