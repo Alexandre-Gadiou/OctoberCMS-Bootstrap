@@ -10,6 +10,7 @@
     right:5px;
     display:none;
     max-height:44px;
+    z-index: 3;
 }
 
 #scroll_top .button-icon {

@@ -6,6 +6,7 @@ use System\Classes\PluginBase;
 use \RainLab\Translate\Classes\Translator;
 use Event;
 use Lang;
+use Algad\Bootstrap\Helpers\StringUtils;
 
 /**
  * Algad Bootstrap Plugin Information File.
@@ -45,9 +46,17 @@ class Plugin extends PluginBase
         return [
             'functions' => [
 
-                'trans' => function($key)
+                'trans' => function($key, $bundle)
                 {
-                    return Lang::get('algad.bootstrap::lang.' . $key, [], Translator::instance()->getLocale());
+                    $result = Lang::get($bundle . '::lang.' . $key, [], Translator::instance()->getLocale());
+                    if (StringUtils::instance()->startsWith($result, $bundle))
+                    {
+                        return $key;
+                    }
+                    else
+                    {
+                        return $result;
+                    }
                 },
                         'config' => function($key)
                 {

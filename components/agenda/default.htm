@@ -25,18 +25,18 @@
     <!-- Responsive calendar - START -->
     <div class="responsive-calendar">
         <div class="controls">
-            <a class="pull-left" data-go="prev"><div class="btn btn-primary">{{ trans('agenda.prev') }}</div></a>
+            <a class="pull-left" data-go="prev"><div class="btn btn-primary">{{ trans('agenda.prev','algad.bootstrap') }}</div></a>
             <h4><span data-head-year></span> <span data-head-month></span></h4>
-            <a class="pull-right" data-go="next"><div class="btn btn-primary">{{ trans('agenda.next') }}</div></a>
+            <a class="pull-right" data-go="next"><div class="btn btn-primary">{{ trans('agenda.next','algad.bootstrap') }}</div></a>
         </div><hr/>
         <div class="day-headers">
-            <div class="day header">{{ trans('agenda.day1') }}</div>
-            <div class="day header">{{ trans('agenda.day2') }}</div>
-            <div class="day header">{{ trans('agenda.day3') }}</div>
-            <div class="day header">{{ trans('agenda.day4') }}</div>
-            <div class="day header">{{ trans('agenda.day5') }}</div>
-            <div class="day header">{{ trans('agenda.day6') }}</div>
-            <div class="day header">{{ trans('agenda.day7') }}</div>
+            <div class="day header">{{ trans('agenda.day1','algad.bootstrap') }}</div>
+            <div class="day header">{{ trans('agenda.day2','algad.bootstrap') }}</div>
+            <div class="day header">{{ trans('agenda.day3','algad.bootstrap') }}</div>
+            <div class="day header">{{ trans('agenda.day4','algad.bootstrap') }}</div>
+            <div class="day header">{{ trans('agenda.day5','algad.bootstrap') }}</div>
+            <div class="day header">{{ trans('agenda.day6','algad.bootstrap') }}</div>
+            <div class="day header">{{ trans('agenda.day7','algad.bootstrap') }}</div>
         </div>
         <div class="days" data-group="days">
 
@@ -55,25 +55,25 @@
     $("#{{agendaID}} .responsive-calendar").responsiveCalendar({
     time: '{{ "now"|date("Y") }}-{{ "now"|date("m") }}',
             translateMonths: [
-                    "{{ trans('agenda.month1') }}",
-                    "{{ trans('agenda.month2') }}",
-                    "{{ trans('agenda.month3') }}",
-                    "{{ trans('agenda.month4') }}",
-                    "{{ trans('agenda.month5') }}",
-                    "{{ trans('agenda.month6') }}",
-                    "{{ trans('agenda.month7') }}",
-                    "{{ trans('agenda.month8') }}",
-                    "{{ trans('agenda.month9') }}",
-                    "{{ trans('agenda.month10') }}",
-                    "{{ trans('agenda.month11') }}",
-                    "{{ trans('agenda.month12') }}"],
+                    "{{ trans('agenda.month1','algad.bootstrap') }}",
+                    "{{ trans('agenda.month2','algad.bootstrap') }}",
+                    "{{ trans('agenda.month3','algad.bootstrap') }}",
+                    "{{ trans('agenda.month4','algad.bootstrap') }}",
+                    "{{ trans('agenda.month5','algad.bootstrap') }}",
+                    "{{ trans('agenda.month6','algad.bootstrap') }}",
+                    "{{ trans('agenda.month7','algad.bootstrap') }}",
+                    "{{ trans('agenda.month8','algad.bootstrap') }}",
+                    "{{ trans('agenda.month9','algad.bootstrap') }}",
+                    "{{ trans('agenda.month10','algad.bootstrap') }}",
+                    "{{ trans('agenda.month11','algad.bootstrap') }}",
+                    "{{ trans('agenda.month12','algad.bootstrap') }}"],
             events: { {{eventListJS | raw}} }  });
-            if ($(window).width() < 768){
+    if ($(window).width() < 768){
     $("#{{agendaID}} .responsive-calendar .day.header").each(
             function (index, value) {
             var $this = $(this);
-                    var day = $this.text();
-                    $this.text(day.charAt(0).toUpperCase());
+            var day = $this.text();
+            $this.text(day.charAt(0).toUpperCase());
             }
     );
     }
