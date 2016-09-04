@@ -53,6 +53,7 @@ class Agenda extends ComponentBase
         $this->eventList = Event::orderBy('date', 'asc')->get();
         $this->addJs('/plugins/algad/bootstrap/assets/vendor/bootstrap-agenda/js/responsive-calendar.min.js');
         $this->addCss('/plugins/algad/bootstrap/assets/vendor/bootstrap-agenda/css/responsive-calendar.css');
+        $this->addJs('/plugins/algad/bootstrap/assets/javascript/agenda.js');
 
         $i = 0;
         $len = count($this->eventList);

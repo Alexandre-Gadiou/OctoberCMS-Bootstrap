@@ -21,7 +21,7 @@
     }
 </style>
 
-<div id="{{ agendaID }}" class="agenda" >
+<div id="{{ agendaID }}" class="agenda" data-time="{{ 'now'|date('Y') }}-{{ 'now'|date('m') }}">
     <!-- Responsive calendar - START -->
     <div class="responsive-calendar">
         <div class="controls">
@@ -51,33 +51,21 @@
 {% set currentYear = __SELF__.eventListJS %}
 
 <script type="text/javascript">
-    $(document).ready(function () {
-    $("#{{agendaID}} .responsive-calendar").responsiveCalendar({
-    time: '{{ "now"|date("Y") }}-{{ "now"|date("m") }}',
-            translateMonths: [
-                    "{{ trans('agenda.month1','algad.bootstrap') }}",
-                    "{{ trans('agenda.month2','algad.bootstrap') }}",
-                    "{{ trans('agenda.month3','algad.bootstrap') }}",
-                    "{{ trans('agenda.month4','algad.bootstrap') }}",
-                    "{{ trans('agenda.month5','algad.bootstrap') }}",
-                    "{{ trans('agenda.month6','algad.bootstrap') }}",
-                    "{{ trans('agenda.month7','algad.bootstrap') }}",
-                    "{{ trans('agenda.month8','algad.bootstrap') }}",
-                    "{{ trans('agenda.month9','algad.bootstrap') }}",
-                    "{{ trans('agenda.month10','algad.bootstrap') }}",
-                    "{{ trans('agenda.month11','algad.bootstrap') }}",
-                    "{{ trans('agenda.month12','algad.bootstrap') }}"],
-            events: { {{eventListJS | raw}} }  });
-    if ($(window).width() < 768){
-    $("#{{agendaID}} .responsive-calendar .day.header").each(
-            function (index, value) {
-            var $this = $(this);
-            var day = $this.text();
-            $this.text(day.charAt(0).toUpperCase());
-            }
-    );
-    }
+    var algadBootstrapAgendaTranslateMonths = [
+            "{{ trans('agenda.month1','algad.bootstrap') }}",
+            "{{ trans('agenda.month2','algad.bootstrap') }}",
+            "{{ trans('agenda.month3','algad.bootstrap') }}",
+            "{{ trans('agenda.month4','algad.bootstrap') }}",
+            "{{ trans('agenda.month5','algad.bootstrap') }}",
+            "{{ trans('agenda.month6','algad.bootstrap') }}",
+            "{{ trans('agenda.month7','algad.bootstrap') }}",
+            "{{ trans('agenda.month8','algad.bootstrap') }}",
+            "{{ trans('agenda.month9','algad.bootstrap') }}",
+            "{{ trans('agenda.month10','algad.bootstrap') }}",
+            "{{ trans('agenda.month11','algad.bootstrap') }}",
+            "{{ trans('agenda.month12','algad.bootstrap') }}"];
+    var algadBootstrapAgendaEvents = { {{eventListJS | raw}} };
 
-    });
+
 </script>
 
