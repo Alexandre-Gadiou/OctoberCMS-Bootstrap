@@ -59,7 +59,7 @@ class Agenda extends ComponentBase
         $len = count($this->eventList);
         foreach ($this->eventList as $event)
         {
-            $this->eventListJS = $this->eventListJS . '"' . date("Y-m-d", strtotime($event['date'])) . '"' . ": {}";
+            $this->eventListJS = $this->eventListJS . date("Y-m-d", strtotime($event['date']));
             if ($i != $len - 1)
             {
                 $this->eventListJS = $this->eventListJS . ",";

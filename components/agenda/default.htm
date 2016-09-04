@@ -21,7 +21,25 @@
     }
 </style>
 
-<div id="{{ agendaID }}" class="agenda" data-time="{{ 'now'|date('Y') }}-{{ 'now'|date('m') }}">
+{% set eventList = __SELF__.eventList %}
+{% set eventListJS = __SELF__.eventListJS %}
+
+<div id="{{ agendaID }}" class="agenda" 
+     data-time="{{ 'now'|date('Y') }}-{{ 'now'|date('m') }}"
+     data-events="{{eventListJS | raw}}"
+     data-m1="{{ trans('agenda.month1','algad.bootstrap') }}" 
+     data-m2="{{ trans('agenda.month2','algad.bootstrap') }}" 
+     data-m3="{{ trans('agenda.month3','algad.bootstrap') }}" 
+     data-m4="{{ trans('agenda.month4','algad.bootstrap') }}" 
+     data-m5="{{ trans('agenda.month5','algad.bootstrap') }}" 
+     data-m6="{{ trans('agenda.month6','algad.bootstrap') }}" 
+     data-m7="{{ trans('agenda.month7','algad.bootstrap') }}" 
+     data-m8="{{ trans('agenda.month8','algad.bootstrap') }}" 
+     data-m9="{{ trans('agenda.month9','algad.bootstrap') }}" 
+     data-m10="{{ trans('agenda.month10','algad.bootstrap') }}" 
+     data-m11="{{ trans('agenda.month11','algad.bootstrap') }}" 
+     data-m12="{{ trans('agenda.month12','algad.bootstrap') }}">
+
     <!-- Responsive calendar - START -->
     <div class="responsive-calendar">
         <div class="controls">
@@ -44,28 +62,3 @@
     </div>
     <!-- Responsive calendar - END -->  
 </div>
-
-{% set eventList = __SELF__.eventList %}
-{% set eventListJS = __SELF__.eventListJS %}
-
-{% set currentYear = __SELF__.eventListJS %}
-
-<script type="text/javascript">
-    var algadBootstrapAgendaTranslateMonths = [
-            "{{ trans('agenda.month1','algad.bootstrap') }}",
-            "{{ trans('agenda.month2','algad.bootstrap') }}",
-            "{{ trans('agenda.month3','algad.bootstrap') }}",
-            "{{ trans('agenda.month4','algad.bootstrap') }}",
-            "{{ trans('agenda.month5','algad.bootstrap') }}",
-            "{{ trans('agenda.month6','algad.bootstrap') }}",
-            "{{ trans('agenda.month7','algad.bootstrap') }}",
-            "{{ trans('agenda.month8','algad.bootstrap') }}",
-            "{{ trans('agenda.month9','algad.bootstrap') }}",
-            "{{ trans('agenda.month10','algad.bootstrap') }}",
-            "{{ trans('agenda.month11','algad.bootstrap') }}",
-            "{{ trans('agenda.month12','algad.bootstrap') }}"];
-    var algadBootstrapAgendaEvents = { {{eventListJS | raw}} };
-
-
-</script>
-
